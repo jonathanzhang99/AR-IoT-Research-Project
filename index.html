@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- AFRAME library for VR/AR image rendering -->
+<script type="text/javascript" src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+
+<!-- Optimized ASM for base artoolkit functionality -->
+<!-- <script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/vendor/jsartoolkit5/build/artoolkit.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/vendor/jsartoolkit5/js/artoolkit.api.js"></script> -->
+<!-- <script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-armarkercloak.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-armarkercontrols.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-artoolkitcontext.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-artoolkitprofile.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-artoolkitsource.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/three.js/threex-arvideoinwebgl.js"></script>
+<script type="text/javascript" src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/aframe-ar.js"></script> -->
+
+<script src="aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+
+
+<body>
+	<a-scene embedded artoolkit='sourceType: webcam;'>
+		<!-- handle unknown marker -->
+<!-- 		<a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0 0.5' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+		<!-- handle hiro marker -->
+		<a-marker preset='hiro'>
+			<a-box position='0 0 0.5' material='opacity: 0.5; side: double;color:red;'>
+				<a-torus-knot radius='0.27' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+			</a-box>
+		</a-marker>
+		
+		<!-- handle kanji marker -->
+		<a-marker preset='kanji'>
+			<a-box position='0 0 0.5' material='opacity: 0.5; side: double;color:green;'>
+				<a-torus-knot radius='0.27' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+			</a-box>
+		</a-marker>
+
+		<a-marker type='barcode' value=0>
+			<a-box position='0 0 0' material='opacity: 0.5; side: double;color:white;'>
+				<a-torus-knot radius='0.3' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+		</a-marker>
+		<a-marker type='barcode' value=1>
+			<a-box position='0 0 0' material='opacity: 0.5; side: double;color:black;'>
+				<a-torus-knot radius='0.3' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+		</a-marker>
+		<a-marker type='barcode' value=2>
+			<a-box position='0 0 0' material='opacity: 0.5; side: double;color:green;'>
+				<a-torus-knot radius='0.3' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+		</a-marker>		
+		<!-- add a simple camera -->
+		<!-- <a-entity camera></a-entity> -->
+	</a-scene>
+</body>
+</html>
